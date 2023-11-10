@@ -1,0 +1,57 @@
+@use "../../styles/mixins.scss" as mix;
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+
+  padding: 4.5px 8px;
+
+  color: var(--white);
+  border-radius: 4px;
+  
+  &_bg-color {
+    &_dark-orange {
+      background-color: var(--dark-orange);
+    }
+  
+    &_light-orange {
+      background-color: var(--light-orange);
+    }
+    
+    &_red {
+      background-color: var(--light-red);
+    }
+  
+    &_green {
+      background-color: var(--light-green);
+    }
+  
+    &_dark-green {
+      background-color: var(--dark-green);
+    }
+  
+    &_dark-blue {
+      background-color: var(--dark-blue);
+    }
+  
+    &_blue {
+      background-color: var(--blue);
+    }
+  
+    &_light-blue {
+      background-color: var(--light-blue);
+    }
+  
+    &_dark-gray {
+      background-color: var(--dark-gray);
+    }
+  
+    &_white {
+      background-color: var(--white);
+    }
+  }
+  @include mix.font($size: 12px, $height: 16px, $weight: 300);
+}

@@ -1,0 +1,57 @@
+@use "../../styles/colors.scss";
+
+.radio {
+  position: absolute;
+
+  opacity: 0;
+  
+  &+label {
+    display: flex;
+    align-items: center;
+  }
+  
+  &+label::before {
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+
+    content: '';
+
+    border: 1px solid var(--gray);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  
+  &:not(:disabled, :checked)+label:hover::before {
+    border-color: var(--primary);
+  }
+  
+  &:not(:disabled):active+label::before {
+    border-color: var(--primary);
+    background-color: var(--primary);
+  }
+
+  &:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+  }
+  
+  &:focus:not(:checked)+label::before {
+    border-color: var(--primary);
+  }
+
+  &:checked+label::before {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  }
+  
+  &:disabled+label::before {
+    background-color: var(--white);
+  }
+}

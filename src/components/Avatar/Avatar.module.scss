@@ -1,0 +1,56 @@
+@use "../../styles/mixins.scss" as mix;
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: var(--white);
+  border-radius: 50%;
+  
+  &_size {
+    &_l {
+      width: 54px;
+      height: 54px;
+      
+      @include mix.font($size: 24px, $height: 30px, $weight: 700);
+    }
+    
+    &_m {
+      width: 40px;
+      height: 40px;
+      
+      @include mix.font($size: 16px, $height: 24px, $weight: 500);
+    }
+    
+    &_s {
+      width: 32px;
+      height: 32px;
+      
+      @include mix.font($size: 14px, $height: 20px, $weight: 500);
+    }
+    
+  }
+  
+  &_bg-color {
+    &_orange {
+      background-color: var(--dark-orange);
+    }
+    
+    &_yellow {
+      background-color: var(--yellow);
+    }
+    
+    &_red {
+      background-color: var(--light-red);
+    }
+    
+    &_green {
+      background-color: var(--dark-green);
+    }
+    
+    &_blue {
+      background-color: var(--light-blue);
+    }
+  }
+}

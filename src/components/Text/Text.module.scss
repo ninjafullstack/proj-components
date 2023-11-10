@@ -1,0 +1,99 @@
+@use "../../styles/colors.scss";
+@use "../../styles/mixins.scss" as mix;
+
+.text {
+  display: flex;
+  align-items: center;
+  
+  &_h1 {
+    @include mix.font($size: 34px, $height: 38px, $weight: 700);
+  }
+  
+  &_h2 {
+    @include mix.font($size: 28px, $height: 36px, $weight: 700);
+  }
+  
+  &_h3 {
+    @include mix.font($size: 24px, $height: 30px, $weight: 700);
+  }
+  
+  &_h4 {
+    @include mix.font($size: 20px, $height: 24px, $weight: 700);
+  }
+  
+  &_h5 {
+    @include mix.font($size: 18px, $height: 24px, $weight: 700);
+  }
+  
+  
+  &_subtitle {
+    &_m {
+      @include mix.font($size: 16px, $height: 20px, $weight: 700);
+    }
+    
+    &_s {
+      @include mix.font($size: 14px, $height: 20px, $weight: 700);
+    }
+  }
+  
+  &_body {
+    &_l {
+      @include mix.font($size: 16px, $height: 24px, $weight: 500);
+    }
+    
+    &_m {
+      @include mix.font($size: 14px, $height: 20px, $weight: 500);
+    }
+  }
+  
+  &_caption {
+    @include mix.font($size: 12px, $height: 16px, $weight: 300);
+  }
+  
+  
+  &_color {
+    &_white {
+      color: var(--white);
+    }
+    
+    &_black {
+      color: var(--black);
+    }
+    
+    &_red {
+      color: var(--dark-red);
+    }
+    
+    &_primary {
+      color: var(--primary);
+    }
+    
+    &_grey {
+      color: var(--grey);
+    }
+    
+    &_dark-gray {
+      color: var(--dark-gray);
+    }
+    
+    &_light-gray {
+      color: var(--primary);
+    }
+    
+    &_bg {
+      color: var(--bg);
+    }
+    
+    &_main {
+      color: var(--primary);
+    }
+    
+    &_green {
+      color: var(--green);
+    }
+    
+    &_orange {
+      color: var(--orange);
+    }
+  }
+}

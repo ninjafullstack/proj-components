@@ -1,0 +1,42 @@
+.svgIcon {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	justify-content: center;
+
+	&_rotate {
+		&_90 {
+			transform: rotate(90deg);
+		}
+
+		&_180 {
+			transform: rotate(180deg);
+		}
+
+		&_270 {
+			transform: rotate(270deg);
+		}
+	}
+
+	& > div {
+		width: 100%;
+		height: 100%;
+	}
+
+	svg {
+		display: block;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	&:not(.defaultStroke) {
+		svg {
+			path,
+			circle,
+			rect {
+				stroke: inherit;
+			}
+		}
+	}
+}

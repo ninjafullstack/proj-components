@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-order-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "ignoreFiles": [
+    "**/*.js",
+    "dist/",
+    "node_modules/",
+    "**/*.css",
+    "**/storybook-static/static/css/main.55175506.css"
+  ],
+  "ignorePatterns": ["**/storybook-static/static/css/*.css"],
+  "rules": {
+    "selector-class-pattern": "^.*$",
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreProperties": [
+          "font-family",
+          "background-image"
+        ]
+      }
+    ],
+    "no-descending-specificity": [true, {
+      "ignoreAtRules": ["each", "media", "supports", "include"],
+      "ignoreSelectors": [
+        ":global",
+        ":local",
+        "/::(?!ng-deep)/"
+      ]
+    }],
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": [
+          "/grid/"
+        ]
+      }
+    ]
+  }
+}

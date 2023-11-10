@@ -1,0 +1,96 @@
+@use "../../styles/mixins.scss" as mix;
+
+.inputWrap {
+  position: relative;
+  
+  max-width: 328px;
+  
+  color: var(--black);
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  
+  input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .label {
+    display: none;
+    
+    &_error {
+      position: absolute;
+      top: 0;
+      left: 10px;
+
+      display: block;
+      
+      padding: 3px;
+      
+      transform: translate(-5px, -18px) scale(0.7);
+      
+      color: var(--dark-red);
+      
+      background-color: var(--white);
+    }
+    
+    &_focused {
+      position: absolute;
+      top: 0;
+      left: 10px;
+
+      display: block;
+      
+      padding: 3px;
+      
+      transform: translate(-5px, -18px) scale(0.7);
+      
+      color: var(--primary);
+      
+      background-color: white;
+    }
+  }
+  
+  &_l {
+    height: 56px;
+    
+    input {
+      padding: 20px 0 12px;
+    }
+  }
+  
+  &_m {
+    height: 40px;
+    
+    input {
+      padding: 12px 0 8px;
+    }
+  }
+  
+  &_focused {
+    border: 1px solid var(--primary);
+  }
+  
+  @include mix.font($size: 16px, $height: 24px, $weight: 500);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px;
+  
+  .ico {
+    cursor: pointer;
+  }
+}
+
+.errorMessage {
+  margin-top: 10px;
+
+  color: var(--dark-red);
+  @include mix.font($size: 12px, $height: 16px, $weight: 300);
+}

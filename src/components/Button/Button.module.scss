@@ -1,0 +1,225 @@
+@use "../../styles/colors.scss";
+
+.button {
+  position: relative;
+
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+  
+  min-height: inherit;
+
+  cursor: pointer;
+  
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  gap: 8px;
+  
+  &_variant {
+    &_primary {
+      color: var(--white);
+      background: var(--primary);
+      stroke: var(--white);
+      
+      &:hover {
+        background: var(--light-primary);
+      }
+      
+      &:active {
+        background: var(--dark-primary);
+      }
+      
+      &.disabled {
+        background: var(--light-gray);
+      }
+      
+      &.loading {
+        .loader {
+          background: var(--primary);
+        }
+      }
+    }
+    
+    &_secondary {
+      color: var(--primary);
+      background: var(--ultra-light-primary);
+      stroke: var(--primary);
+      
+      &:hover {
+        color: var(--white);
+        background: var(--primary);
+        stroke: var(--white);
+      }
+      
+      &:active {
+        color: var(--primary);
+        background: rgba($color: var(--primary), $alpha: 20%);
+        stroke: var(--primary);
+      }
+      
+      &.disabled {
+        background: var(--ultra-light-primary);
+        
+        & * {
+          opacity: 0.4;
+        }
+      }
+      
+      &.loading {
+        .loader {
+          background: var(--ultra-light-primary);
+        }
+      }
+    }
+    
+    &_outlined {
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      background: var(--white);
+      stroke: var(--primary);
+      
+      &:hover {
+        color: var(--white);
+        background: var(--primary);
+        stroke: var(--white);
+      }
+      
+      &:active {
+        color: var(--primary);
+        background: var(--ultra-light-primary);
+        stroke: var(--primary);
+      }
+      
+      &.disabled {
+        opacity: 0.4;
+      }
+      
+      &.loading {
+        .loader {
+          color: var(--primary);
+          background: var(--white);
+          stroke: var(--primary);
+        }
+      }
+    }
+    
+    &_text {
+      color: var(--primary);
+      border: none;
+      background: transparent;
+      stroke: var(--primary);
+      
+      &:hover {
+        color: var(--dark-primary);
+        stroke: var(--dark-primary);
+      }
+      
+      &:active {
+        color: var(--primary);
+        stroke: var(--primary);
+      }
+      
+      &.disabled {
+        color: var(--gray);
+        stroke: var(--gray);
+      }
+      
+      &.loading {
+        .loader {
+          opacity: 1;
+          background: transparent;
+        }
+        
+        & > * {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+  
+  &_width {
+    &_full {
+      width: 100%;
+    }
+  }
+  
+  &_size {
+    &_sm {
+      height: 36px;
+      padding: 0 24px;
+      
+      font-size: 14px;
+      line-height: 16px;
+    }
+    
+    &_md {
+      height: 40px;
+      padding: 0 32px;
+      
+      font-size: 14px;
+      line-height: 16px;
+    }
+    
+    &_lg {
+      height: 56px;
+      padding: 0 60px;
+      
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  
+  &_icon_position {
+    &_left {
+      flex-direction: row;
+    }
+    
+    &_right {
+      flex-direction: row-reverse;
+    }
+  }
+  
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.loader {
+  --transition-time: 0s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  opacity: 0;
+}
+
+.loading {
+  cursor: default;
+  
+  .loader {
+    --transition-time: 0.3s;
+    opacity: 1;
+    
+    svg {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
